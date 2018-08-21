@@ -92,6 +92,17 @@
   list
 
 ##########################################################
+# @@Louiz: test find persons command after deletion
+##########################################################
+
+  # still can find existing people on the list
+  find Betsy Dickson
+  # cannot find people who have been deleted
+  find Adam Potato Charlie
+  # still can find existing people on the list but not deleted
+  find Betsy Potato
+
+##########################################################
 # test clear command
 ##########################################################
 

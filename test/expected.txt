@@ -268,6 +268,21 @@
 || 
 || 2 persons found!
 || ===================================================
+|| Enter command: || [Command entered:  find Betsy Dickson]
+|| 	1. Betsy Choo  Phone Number: 222222  Email: benchoo@nus.edu.sg
+|| 	2. Dickson Ee  Phone Number: 444444  Email: dickson@nus.edu.sg
+|| 
+|| 2 persons found!
+|| ===================================================
+|| Enter command: || [Command entered:  find Adam Potato Charlie]
+|| 
+|| 0 persons found!
+|| ===================================================
+|| Enter command: || [Command entered:  find Betsy Potato]
+|| 	1. Betsy Choo  Phone Number: 222222  Email: benchoo@nus.edu.sg
+|| 
+|| 1 persons found!
+|| ===================================================
 || Enter command: || [Command entered:  clear]
 || Address book has been cleared!
 || ===================================================
