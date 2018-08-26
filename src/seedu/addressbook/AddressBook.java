@@ -642,7 +642,7 @@ public class AddressBook {
         final StringBuilder messageAccumulator = new StringBuilder();
         for (int i = 0; i < persons.size(); i++) {
             final HashMap<String,String> person = persons.get(i);
-            final int displayIndex = i + DISPLAYED_INDEX_OFFSET;
+            final int displayIndex = getDisplayIndex(i);
             messageAccumulator.append('\t')
                               .append(getIndexedPersonListElementMessage(displayIndex, person))
                               .append(LS);
@@ -689,9 +689,26 @@ public class AddressBook {
      * @return the actual person object in the last shown person listing
      */
     private static HashMap<String,String> getPersonByLastVisibleIndex(int lastVisibleIndex) {
-       return latestPersonListingView.get(lastVisibleIndex - DISPLAYED_INDEX_OFFSET);
+       return latestPersonListingView.get(getActualIndex(lastVisibleIndex));
     }
 
+    /**
+     * Subtracts the displayed index offset from the index provided to get the actual index.
+     * @param index The array index which is to be converted to a display index 
+     * @return The displayed index for the given array index.
+     */
+    private static int getActualIndex(int index) {
+        return index - DISPLAYED_INDEX_OFFSET;
+    }
+
+    /**
+     * Adds the displayed index offset to the index provided to get the display (visible) index.
+     * @param index The array index which is to be converted to a display index 
+     * @return The displayed index for the given array index.
+     */
+    private static int getDisplayIndex(int index) {
+        return index + DISPLAYED_INDEX_OFFSET;
+    }
 
     /*
      * ===========================================
