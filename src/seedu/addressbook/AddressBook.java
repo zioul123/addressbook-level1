@@ -583,7 +583,7 @@ public class AddressBook {
 
     /**
      * Prompts for the command and reads the text entered by the user.
-     * Ignores lines with first non-whitespace char equal to {@link #INPUT_COMMENT_MARKER} (considered comments)
+     * Ignores lines which are empty or comments
      *
      * @return full line entered by the user
      */
@@ -591,13 +591,24 @@ public class AddressBook {
         System.out.print(LINE_PREFIX + "Enter command: ");
         String inputLine = SCANNER.nextLine();
         // silently consume all blank and comment lines
-        while (inputLine.trim().isEmpty() || inputLine.trim().charAt(0) == INPUT_COMMENT_MARKER) {
+        while (inputLine.trim().isEmpty() || isComment(inputLine)) {
             inputLine = SCANNER.nextLine();
         }
         return inputLine;
     }
 
-   /*
+    /**
+     * Reads a line of text (input) and determines whether it is a comment or not.
+     * Lines with first non-whitespace char equal to {@link #INPUT_COMMENT_MARKER} are considered comments
+     * 
+     * @param inputLine The line of text to check
+     * @return whether inputLine is a comment
+     */
+    private static boolean isComment(String inputLine) {
+        return inputLine.trim().charAt(0) == INPUT_COMMENT_MARKER;
+    }
+
+    /*
     * NOTE : =============================================================
     * Note how the method below uses Java 'Varargs' feature so that the
     * method can accept a varying number of message parameters.
