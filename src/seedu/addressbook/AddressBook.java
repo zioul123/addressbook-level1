@@ -175,7 +175,8 @@ public class AddressBook {
      * This is a subset of the full list. Deleting persons in the pull list does not delete
      * those persons from this list.
      */
-    private static ArrayList<HashMap<String,String>> latestPersonListingView = getAllPersonsInAddressBook(); // initial view is of all
+    private static ArrayList<HashMap<String,String>> latestPersonListingView 
+            = getAllPersonsInAddressBook(); // initial view is of all
 
     /**
      * The path to the file used for storing person data.
@@ -485,7 +486,8 @@ public class AddressBook {
      * @param keywords for searching
      * @return list of persons in full model with name containing some of the keywords
      */
-    private static ArrayList<HashMap<String,String>> getPersonsWithNameContainingAnyKeyword(Collection<String> keywords) {
+    private static ArrayList<HashMap<String,String>> getPersonsWithNameContainingAnyKeyword(
+            Collection<String> keywords) {
         final ArrayList<HashMap<String,String>> matchedPersons = new ArrayList<>();
         for (HashMap<String,String> person : getAllPersonsInAddressBook()) {
             final Set<String> wordsInName = new HashSet<>(splitByWhitespace(getNameFromPerson(person)));
@@ -672,7 +674,8 @@ public class AddressBook {
      * @return formatted listing message with index
      */
     private static String getIndexedPersonListElementMessage(int visibleIndex, HashMap<String,String> person) {
-        return String.format(MESSAGE_DISPLAY_LIST_ELEMENT_INDEX, visibleIndex) + getMessageForFormattedPersonData(person);
+        return String.format(MESSAGE_DISPLAY_LIST_ELEMENT_INDEX, visibleIndex) 
+                + getMessageForFormattedPersonData(person);
     }
 
     /**
@@ -760,7 +763,8 @@ public class AddressBook {
      * @return the list of decoded persons
      */
     private static ArrayList<HashMap<String,String>> loadPersonsFromFile(String filePath) {
-        final Optional<ArrayList<HashMap<String,String>>> successfullyDecoded = decodePersonsFromStrings(getLinesInFile(filePath));
+        final Optional<ArrayList<HashMap<String,String>>> successfullyDecoded = 
+                decodePersonsFromStrings(getLinesInFile(filePath));
         if (!successfullyDecoded.isPresent()) {
             showToUser(MESSAGE_INVALID_STORAGE_FILE_CONTENT);
             exitProgram();
