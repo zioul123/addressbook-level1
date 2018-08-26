@@ -616,31 +616,12 @@ public class AddressBook {
     */
 
     /**
-     * Shows a message to the user.
+     * Shows a message to the user
      */
-    private static void showToUser(String message) {
-        System.out.println(LINE_PREFIX + message);
-    }
-    private static void showToUser(String message1, String message2) {
-        showToUser(linearConcatenate(message1, LINE_PREFIX + message2));
-    }
-    private static void showToUser(String message1, String message2, String message3) {
-        showToUser(linearConcatenate(message1, LINE_PREFIX + message2), message3);
-    }
-    private static void showToUser(String message1, String message2, String message3, String message4) {
-        showToUser(linearConcatenate(message1, LINE_PREFIX + message2), message3, message4);
-    }
-    private static void showToUser(String message1, String message2, String message3, String message4,
-                                   String message5) {
-        showToUser(linearConcatenate(message1, LINE_PREFIX + message2), message3, message4, message5);
-    }
-
-    /**
-     * Concatenates one string to another after a newline character.
-     * e.g. linearConcatenate("a", "b") returns "a\nb".
-     */
-    private static String linearConcatenate(String a, String b) {
-        return a + "\n" + b;
+    private static void showToUser(String... message) {
+        for (String m : message) {
+            System.out.println(LINE_PREFIX + m);
+        }
     }
 
     /**
