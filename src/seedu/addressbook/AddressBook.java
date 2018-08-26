@@ -198,11 +198,19 @@ public class AddressBook {
         processProgramArgs(args);
         loadDataFromStorage();
         while (true) {
-            String userCommand = getUserInput();
-            echoUserCommand(userCommand);
-            String feedback = executeCommand(userCommand);
-            showResultToUser(feedback);
+            executeCommandFeedbackLoop();
         }
+    }
+
+    /**
+     * The main command-feedback loop of the program.
+     * Takes in a user input, echos it, executes the relevant command and shows the result.
+     */
+    private static void executeCommandFeedbackLoop() {
+        String userCommand = getUserInput();
+        echoUserCommand(userCommand);
+        String feedback = executeCommand(userCommand);
+        showResultToUser(feedback);
     }
 
     /*
