@@ -81,6 +81,7 @@ public class AddressBook {
     private static final String MESSAGE_ERROR_WRITING_TO_FILE = "Unexpected error: unable to write to file: %1$s";
     private static final String MESSAGE_PERSONS_FOUND_OVERVIEW = "%1$d persons found!";
     private static final String MESSAGE_PERSON_FOUND_OVERVIEW = "%1$d person found!";
+    private static final String MESSAGE_STATS_NUMBER_OF_PERSONS = "There %1$s %2$d %3$s in the address book!";
     private static final String MESSAGE_STATS_LISTED_OVERVIEW = "Address book statistics listed!";
     private static final String MESSAGE_STORAGE_FILE_CREATED = "Created new empty storage file: %1$s";
     private static final String MESSAGE_WELCOME = "Welcome to your Address Book!";
@@ -585,6 +586,10 @@ public class AddressBook {
      * @return
      */
     private static String executeListStats() {
+        int numberOfPeople = ALL_PERSONS.size();
+        String isOrAre = numberOfPeople == 1 ? "is" : "are";
+        String peopleOrPerson = numberOfPeople == 1 ? "person" : "people";
+        showToUser(String.format(MESSAGE_STATS_NUMBER_OF_PERSONS, isOrAre, ALL_PERSONS.size(), peopleOrPerson));
         return MESSAGE_STATS_LISTED_OVERVIEW;
     }
 
