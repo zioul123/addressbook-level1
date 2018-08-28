@@ -119,6 +119,10 @@ public class AddressBook {
     private static final String COMMAND_CLEAR_DESC = "Clears address book permanently.";
     private static final String COMMAND_CLEAR_EXAMPLE = COMMAND_CLEAR_WORD;
 
+    private static final String COMMAND_STATS_WORD = "stats";
+    private static final String COMMAND_STATS_DESC = "Shows statistics of the address book.";
+    private static final String COMMAND_STATS_EXAMPLE = COMMAND_STATS_WORD;
+
     private static final String COMMAND_HELP_WORD = "help";
     private static final String COMMAND_HELP_DESC = "Shows program usage instructions.";
     private static final String COMMAND_HELP_EXAMPLE = COMMAND_HELP_WORD;
@@ -1122,6 +1126,7 @@ public class AddressBook {
                 + getUsageInfoForViewCommand() + LS
                 + getUsageInfoForDeleteCommand() + LS
                 + getUsageInfoForClearCommand() + LS
+                + getUsageInfoForStatsCommand() + LS
                 + getUsageInfoForExitCommand() + LS
                 + getUsageInfoForHelpCommand();
     }
@@ -1151,6 +1156,12 @@ public class AddressBook {
     private static String getUsageInfoForClearCommand() {
         return String.format(MESSAGE_COMMAND_HELP, COMMAND_CLEAR_WORD, COMMAND_CLEAR_DESC) + LS
                 + String.format(MESSAGE_COMMAND_HELP_EXAMPLE, COMMAND_CLEAR_EXAMPLE) + LS;
+    }
+
+    /** Returns string for showing 'stats' command usage instruction */
+    private static String getUsageInfoForStatsCommand() {
+        return String.format(MESSAGE_COMMAND_HELP, COMMAND_STATS_WORD, COMMAND_STATS_DESC) + LS
+                + String.format(MESSAGE_COMMAND_HELP_EXAMPLE, COMMAND_STATS_EXAMPLE) + LS;
     }
 
     /** Returns the string for showing 'view' command usage instruction */
