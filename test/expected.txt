@@ -82,6 +82,10 @@
 || 
 || 0 persons found!
 || ===================================================
+|| Enter command: || [Command entered:  stats]
+|| There are 0 people in the address book!
+|| Address book statistics listed!
+|| ===================================================
 || Enter command: || [Command entered:  add wrong args wrong args]
 || Invalid command format: add 
 || add: Adds a person to the address book.
@@ -292,6 +296,30 @@
 || Enter command: || [Command entered:  list]
 || 
 || 0 persons found!
+|| ===================================================
+|| Enter command: || [Command entered:  clear]
+|| Address book has been cleared!
+|| ===================================================
+|| Enter command: || [Command entered:  stats]
+|| There are 0 people in the address book!
+|| Address book statistics listed!
+|| ===================================================
+|| Enter command: || [Command entered:  add person p/19382435 e/a@a.a]
+|| New person added: person, Phone: 19382435, Email: a@a.a
+|| ===================================================
+|| Enter command: || [Command entered:  stats]
+|| There is 1 person in the address book!
+|| Address book statistics listed!
+|| ===================================================
+|| Enter command: || [Command entered:  add anotha person p/19382444 e/a@b.a]
+|| New person added: anotha person, Phone: 19382444, Email: a@b.a
+|| ===================================================
+|| Enter command: || [Command entered:  stats]
+|| There are 2 people in the address book!
+|| Address book statistics listed!
+|| ===================================================
+|| Enter command: || [Command entered:  clear]
+|| Address book has been cleared!
 || ===================================================
 || Enter command: || [Command entered:  exit]
 || Exiting Address Book... Good bye!
