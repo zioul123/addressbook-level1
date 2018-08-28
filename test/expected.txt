@@ -69,6 +69,9 @@
 || clear: Clears address book permanently.
 || 	Example: clear
 || 
+|| stats: Shows statistics of the address book.
+|| 	Example: stats
+|| 
 || exit: Exits the program.	Example: exit
 || help: Shows program usage instructions.	Example: help
 || ===================================================
